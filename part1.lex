@@ -16,14 +16,12 @@
 %option nounput
 %option noinput
 
-digit       [0-9]
-letter      [a-zA-Z]
 whitespace  [ \t\r\n]
 symbol      [\[\](){},;:]
 
-id          {letter}({letter}|{digit}|_)*
-integernum  {digit}+
-realnum     {digit}+\.{digit}+
+id          [a-zA-Z][a-zA-Z0-9_]*
+integernum  [0-9]+
+realnum     [0-9]+\.[0-9]+
 str         \"([^"\\\r\n]|\\[tn"])*\"
 
 %%
