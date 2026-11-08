@@ -35,7 +35,7 @@ int|float|void|write|read|while|do|if|then|else|return {
 {realnum}   { printf("<realnum,%s>", yytext); }
 {integernum} { printf("<integernum,%s>", yytext); }
 {id}        { printf("<id,%s>", yytext); }
-{str}       { printf("<str,%.*s>", yyleng - 2, yytext + 1); /* drop the outer quotes */ }
+{str}       { printf("<str,%.*s>", (int)(yyleng - 2), yytext + 1); /* drop the outer quotes */ }
 
 "=="|"<>"|"<="|">="|"<"|">" { printf("<relop,%s>", yytext); }
 "+"|"-"     { printf("<addop,%s>", yytext); }
